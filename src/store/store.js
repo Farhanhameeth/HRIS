@@ -49,5 +49,5 @@ export const store = configureStore({
 
         // attendanceSummary: attendanceSummaryReducer,
     },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+    //middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
 });

@@ -9,8 +9,10 @@ import { setLogoutTimer } from "./authUtils.js";
 export const loginUser = createAsyncThunk(
     'auth/loginUser',
     async (userData, { dispatch, rejectWithValue }) => {
+        console.log("API Base URL:", import.meta.env.VITE_API_BASE_URL);
+
         try {
-            const response = await axios.post( `${process.env.REACT_APP_API_BASE_URL}/api/Authentication/login`, userData, {
+            const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/Authentication/login`, userData, {
                 headers: {
                     'Content-Type': 'application/json',
                     'PPA_KEY': 'SvnqwrRcCGE_RSMS_KEY5xWUYcI3aLAi4=PPa'
