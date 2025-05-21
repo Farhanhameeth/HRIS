@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  border: 1px solid red;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  #print-section,
+  #print-section * {
+    visibility: visible;
+  }
+
+  #print-section {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: white;
+    padding: 20px;
+  }
+}
+
+/* Custom styling for react-calendar */
+.react-calendar {
+    background-color: #fff !important;
+    border: none !important; /* Remove default border */
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .react-calendar__tile {
+    padding: 0.5rem !important;
+    text-align: center !important;
+    transition: background-color 0.2s, transform 0.2s; /* Add transform to the transition for scaling */
+    border-radius: 50%; /* Ensure it's circular */
+  }
+  
+  .react-calendar__tile:hover {
+    background-color: #cb5d5d !important; /* Tailwind CSS class bg-red-600 */
+    color: white !important; /* Ensure text color is readable */
+    transform: scale(1.1); /* Scale up slightly on hover */
+  }
+  
+  .react-calendar__tile--active {
+    background-color: #dc2626 !important; /* Tailwind CSS class bg-blue-600 */
+    color: white !important;
+  }
+
+  .react-calendar__tile--now {
+    background-color: #eec2c2 !important; /* Blue color for the current date */
+    color: white !important;
+  }
+
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: auto;
+    bottom: auto;
+    marginRight: -50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    borderRadius: 10px;
+    outline: none;
+    maxWidth: 500px;
+    width: 60%;
+    maxHeight: 80vh;
+    overflowY: auto;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backgroundColor: rgba(0, 0, 0, 0.75);
+    zIndex: 1000;
+}
+
+.close-button {
+    background: red;
+    color: white;
+    padding: 10px;
+    borderRadius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+.hide-default-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.hide-default-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+/* Global CSS (e.g., src/index.css or src/styles.css) */
+
+/* For Webkit-based browsers like Chrome, Safari */
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #FE5E00; /* customOrange-300 */
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #FF944D; /* Optionally add a border using customOrange-100 */
+}
+
+/* For Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #FE5E00; /* customOrange-300 */
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #FF944D;
+}
+
+/* For IE/Edge */
+input[type="range"]::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #FE5E00;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #FF944D;
+}
+
